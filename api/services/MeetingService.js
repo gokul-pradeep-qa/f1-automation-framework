@@ -1,11 +1,7 @@
-const OpenF1Client = require("../OpenF1Client");
+const BaseApiService = require("../BaseApiService");
 const Endpoints = require("../Endpoints");
 
-class MeetingService {
-
-    constructor() {
-        this.client = new OpenF1Client();
-    }
+class MeetingService extends BaseApiService {
 
     async getLatestMeeting() {
 
@@ -14,6 +10,7 @@ class MeetingService {
 );
 
     }
+
 
     async getMeetingsByYear(year) {
 

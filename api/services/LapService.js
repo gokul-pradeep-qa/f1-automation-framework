@@ -1,11 +1,7 @@
-const OpenF1Client = require("../OpenF1Client");
+const BaseApiService = require("../BaseApiService");
 const Endpoints = require("../Endpoints");
 
-class LapService {
-
-    constructor() {
-        this.client = new OpenF1Client();
-    }
+class LapService extends BaseApiService {
 
     async getDriverLaps(sessionKey, driverNumber) {
 

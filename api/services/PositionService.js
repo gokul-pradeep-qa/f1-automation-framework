@@ -1,11 +1,7 @@
-const OpenF1Client = require("../OpenF1Client");
+const BaseApiService = require("../BaseApiService");
 const Endpoints = require("../Endpoints");
 
-class PositionService {
-
-    constructor() {
-        this.client = new OpenF1Client();
-    }
+class PositionService extends BaseApiService {
 
     async getPositions(sessionKey) {
 
