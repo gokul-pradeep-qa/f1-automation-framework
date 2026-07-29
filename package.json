@@ -3,14 +3,14 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-  "test": "playwright test",
-  "smoke": "playwright test tests/smoke",
-  "regression": "playwright test tests/regression",
-  "api": "playwright test tests/api",
-  "ui-api": "playwright test tests/ui-api",
-  "visual": "playwright test tests/visual",
-  "report": "playwright show-report",
-  "lint": "eslint ."
+    "test": "playwright test",
+    "smoke": "playwright test tests/smoke",
+    "regression": "playwright test tests/regression",
+    "api": "playwright test tests/api",
+    "ui-api": "playwright test tests/ui-api",
+    "visual": "playwright test tests/visual",
+    "report": "playwright show-report",
+    "lint": "eslint ."
   },
   "keywords": [],
   "author": "",
@@ -30,7 +30,6 @@
     "exceljs": "^4.4.0",
     "express": "^5.1.0",
     "faker": "^6.6.6",
-    "msnodesqlv8": "^4.5.0",
     "mssql": "^11.0.1",
     "node-fetch": "^3.3.2"
   }
