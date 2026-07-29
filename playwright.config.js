@@ -1,5 +1,6 @@
 // @ts-check
 const { defineConfig, devices } = require('@playwright/test');
+const env = require("./config/env");
 
 /**
  * Read environment variables from file.
@@ -26,7 +27,7 @@ module.exports = defineConfig({
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
-    headless:false,
+    headless: env.HEADLESS,
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
@@ -40,7 +41,6 @@ module.exports = defineConfig({
      name: 'chromium',
       use: {
         browserName: 'chromium',
-        headless: false,
         screenshot: 'on',
         video: 'on',
         trace: 'on',
