@@ -1,9 +1,16 @@
 {
-  "name": "playwright",
+  "name": "f1-automation-framework",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "regression": "npx playwright test tests/OrangeHRSite.spec.js"
+  "test": "playwright test",
+  "smoke": "playwright test tests/smoke",
+  "regression": "playwright test tests/regression",
+  "api": "playwright test tests/api",
+  "ui-api": "playwright test tests/ui-api",
+  "visual": "playwright test tests/visual",
+  "report": "playwright show-report",
+  "lint": "eslint ."
   },
   "keywords": [],
   "author": "",
