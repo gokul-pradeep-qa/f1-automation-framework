@@ -5,4 +5,6 @@ module.exports = {
   OPENF1_URL: process.env.OPENF1_URL,
   HEADLESS: process.env.HEADLESS === "true",
   BROWSER: process.env.BROWSER
+  
 };
+

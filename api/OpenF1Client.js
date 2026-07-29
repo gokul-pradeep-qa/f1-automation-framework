@@ -1,5 +1,6 @@
 const { request } = require("@playwright/test");
 const env = require("../config/env");
+const Retry = require("../utils/Retry");
 
 class OpenF1Client {
 
@@ -19,19 +20,21 @@ class OpenF1Client {
 
     async getJson(endpoint) {
 
+    return await Retry.execute(async () => {
+
         const response = await this.get(endpoint);
 
         if (!response.ok()) {
-
             throw new Error(
                 `GET ${endpoint} failed (${response.status()})`
             );
-
         }
 
         return await response.json();
 
-    }
+    });
+
+}
 
 }
 

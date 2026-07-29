@@ -1,13 +1,23 @@
 const BaseApiService = require("../BaseApiService");
 const Endpoints = require("../Endpoints");
+const Cache = require("../../utils/Cache");
 
 class SessionService extends BaseApiService {
 
     async getLatestSession() {
 
-        return await this.client.getJson(
-    `${Endpoints.SESSIONS}?session_key=latest`
-);
+    const cacheKey = "latest-session";
+
+    if (Cache.has(cacheKey)) {
+        return Cache.get(cacheKey);
+    }
+
+    const session = await this.client.getJson(Endpoints.SESSIONS);
+
+    Cache.set(cacheKey, session);
+
+    return session;
+
 
     }
     async getSessionsByYear(year) {

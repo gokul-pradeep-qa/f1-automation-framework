@@ -6,7 +6,7 @@
     "test": "playwright test",
     "smoke": "playwright test tests/smoke",
     "regression": "playwright test tests/regression",
-    "api": "playwright test tests/api",
+    "api": "playwright test tests/api/sessions-api.spec.js",
     "ui-api": "playwright test tests/ui-api",
     "visual": "playwright test tests/visual",
     "report": "playwright show-report",

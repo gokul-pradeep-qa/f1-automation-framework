@@ -11,6 +11,7 @@ function getFastestLap(laps) {
     return validLaps[0];
 }
 
+
 function getAverageLap(laps) {
 
     const validLaps = laps.filter(
