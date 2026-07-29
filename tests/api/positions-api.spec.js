@@ -2,6 +2,7 @@ const { test, expect } = require("@playwright/test");
 
 const SessionService = require("../../api/services/SessionService");
 const PositionService = require("../../api/services/PositionService");
+const ApiAssertions = require("../../utils/ApiAssertions");
 
 test("Verify Latest Session Positions", async () => {
 
@@ -10,13 +11,13 @@ test("Verify Latest Session Positions", async () => {
 
     const sessions = await sessionService.getLatestSession();
 
-    expect(sessions.length).toBeGreaterThan(0);
+     ApiAssertions.expectNotEmpty(sessions);
 
     const sessionKey = sessions[0].session_key;
 
     const positions = await positionService.getPositions(sessionKey);
 
-    expect(positions.length).toBeGreaterThan(0);
+     ApiAssertions.expectNotEmpty(positions);
 
     console.log(positions[0]);   
 

@@ -2,6 +2,8 @@ const { test, expect } = require("@playwright/test");
 
 const SessionService = require("../../api/services/SessionService");
 const LapService = require("../../api/services/LapService");
+const ApiAssertions = require("../../utils/ApiAssertions");
+
 
 test("Verify Driver Lap Data", async () => {
 
@@ -15,8 +17,8 @@ test("Verify Driver Lap Data", async () => {
     const sessionKey = sessions[0].session_key;
 
     const laps = await lapService.getDriverLaps(sessionKey, 1);
-
-    expect(laps.length).toBeGreaterThan(0);
+    
+    ApiAssertions.expectNotEmpty(laps);
 
     const lap = laps[0];
 

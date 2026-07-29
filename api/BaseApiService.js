@@ -1,4 +1,4 @@
-const OpenF1Client = require("./services/OpenF1Client");
+const OpenF1Client = require("./OpenF1Client");
 
 class BaseApiService {
 
